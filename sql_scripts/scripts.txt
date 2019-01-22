@@ -1,0 +1,31 @@
+create table:
+
+CREATE TABLE DASH7375.WATER_METER_2
+(
+  "data_TS" TIMESTAMP,
+  "SYS1 - Water Meter 2" REAL
+)
+
+delete records:
+
+DELETE FROM JEREMYS_NEW_TABLE WHERE "DATE" > '2018-09-01 01:01:01';
+
+Select max value in a column:
+
+SELECT MAX("DATA_TS") FROM PTSA_PPB
+
+Select most recent 5 records:
+
+SELECT * FROM DASH11058.PCP12 order by DATA_TIME_FORMATTED ASC limit 5;
+
+Select most recent date:
+
+SELECT * FROM PTSA_PPB WHERE "DATA_TS"=(SELECT MAX("DATA_TS") FROM PTSA_PPB);
+
+or
+
+SELECT MAX("Date") FROM TOTAL_DATA_SET
+
+Select select first 2000 records:
+
+SELECT * FROM DASH5259.TOTAL_DATA_SET ORDER BY "Date" desc limit 2000
